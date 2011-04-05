@@ -3,4 +3,7 @@
 # Adding these here as I can't checkin my gitconfig since it included my auth codes
 # just running this bash script once you make changes should do the trick
 
+# Most of these via: http://nuclearsquid.com/writings/git-tricks-tips-workflows.html
+
+git config --global diff.renames copies
 git config --global color.ui auto
