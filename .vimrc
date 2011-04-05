@@ -1,4 +1,7 @@
+set background=dark
+colorscheme solarized
+syntax on
 
-
-    set background=dark
-    colorscheme solarized
+set tabstop=4
+set shiftwidth=4
+set expandtab
