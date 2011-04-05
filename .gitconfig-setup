@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Adding these here as I can't checkin my gitconfig since it included my auth codes
+# just running this bash script once you make changes should do the trick
+
+git config --global color.ui auto
