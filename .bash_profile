@@ -5,7 +5,7 @@ export HADOOPDIR=~/hadoop-conf
 export HADOOPSITEPATH=$HADOOPDIR
 export PIG_CLASSPATH=$HADOOPDIR
 export OOZIE_HOME=~/oozie
-export PIG_DIR="/Users/joldenbeuving/hadoop/pig/bin"
+export PIG_DIR="~/hadoop/pig/bin"
 PATH="$HADOOP_INSTALL_DIR:$PATH:$PIG_DIR:$HADOOPDIR"
 export PATH=$HADOOP_HOME/bin:$PATH:/usr/local/bin
 export SVN_EDITOR="/usr/bin/vim"
@@ -19,6 +19,29 @@ export MANPATH=/opt/local/share/man:$MANPATH
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
+
+
+# Some inpsiration from: https://github.com/rtomayko/dotfiles/blob/rtomayko/.bashrc
+
+# fuck that you have new mail shit
+unset MAILCHECK
+# disk usage with human sizes and minimal depth
+alias du1='du -h --max-depth=1'
+alias fn='find . -name'
+alias hi='history | tail -20'
+
+
+# Usage: puniq [<path>]
+# Remove duplicate entries from a PATH style value while retaining
+# the original order. Use PATH if no <path> is given.
+#
+# Example:
+#   $ puniq /usr/bin:/usr/local/bin:/usr/bin
+#   /usr/bin:/usr/local/bin
+puniq () {
+    echo "$1" |tr : '\n' |nl |sort -u -k 2,2 |sort -n |
+    cut -f 2- |tr '\n' : |sed -e 's/:$//' -e 's/^://'
+}
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
@@ -67,4 +90,14 @@ fi
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+# condense PATH entries
+PATH=$(puniq $PATH)
+MANPATH=$(puniq $MANPATH)
+
+test -n "$INTERACTIVE" -a -n "$LOGIN" && {
+    uname -npsr
+    uptime
+}
+
 
