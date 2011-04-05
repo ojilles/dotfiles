@@ -7,7 +7,7 @@ export PIG_CLASSPATH=$HADOOPDIR
 export OOZIE_HOME=~/oozie
 export PIG_DIR="~/hadoop/pig/bin"
 PATH="$HADOOP_INSTALL_DIR:$PATH:$PIG_DIR:$HADOOPDIR"
-export PATH=$HADOOP_HOME/bin:$PATH:/usr/local/bin
+export PATH=$HADOOP_HOME/bin:$PATH:/usr/local/bin:~/bin
 export SVN_EDITOR="/usr/bin/vim"
 
 
