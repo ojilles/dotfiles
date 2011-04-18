@@ -9,7 +9,7 @@ export PIG_DIR="~/hadoop/pig/bin"
 PATH="$HADOOP_INSTALL_DIR:$PATH:$PIG_DIR:$HADOOPDIR"
 export PATH=$HADOOP_HOME/bin:$PATH:/usr/local/bin:~/bin
 export SVN_EDITOR="/usr/bin/vim"
-
+export TERM=xterm-256color
 
 # MacPorts Installer addition on 2010-12-07_at_16:00:02: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
