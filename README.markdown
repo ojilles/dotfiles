@@ -7,4 +7,4 @@ Probably not. Don't use this, I'm no expert, this is bug ridden and probably off
 
 Usage
 ---------
-Just check this out in your homedirectory and you're set. Be carefull though!
+Just check this out in your homedirectory and you're set. Be carefull though! In order to check this out, clone it into a subdir, then move all files (including .git!) to your homedirectory
