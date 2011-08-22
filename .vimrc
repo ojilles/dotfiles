@@ -44,3 +44,14 @@ autocmd BufNewFile,BufRead *.txt,*.markdown,*.md setlocal ft=markdown
 
 " Map in spelling correction
 map  :w!<CR>:!aspell --home-dir ~/jilles.net/_bin -p custom_dict.aspell check %<CR>:e! %<CR>   
+
+
+" Put on the training wheels:
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
