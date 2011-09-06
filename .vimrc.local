@@ -1,1 +1,30 @@
-" Local vim rc additions
+"
+" After installing Janus, these are the different vimrc settings
+" Janus: https://github.com/carlhuda/janus
+" Install:
+" # curl https://raw.github.com/carlhuda/janus/master/bootstrap.sh -o - | sh
+"
+
+" Next bit is from: https://github.com/mnazim/dotfiles/blob/master/vim/vimrc
+" Move Backup Files to ~/.vim/sessions
+set backupdir=~/.vim/sessions
+set dir=~/.vim/sessions
+
+" Turn off annoying swapfiles
+set noswapfile
+
+" Prefer unix over windows over os9 formats
+set fileformats=unix,dos,mac
+
+" Map in spelling correction
+map  :w!<CR>:!aspell --home-dir ~/jilles.net/_bin -p custom_dict.aspell check %<CR>:e! %<CR>   
+
+" Put on the training wheels:
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
