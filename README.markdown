@@ -13,3 +13,6 @@ Usage
 Just check this out in your homedirectory and you're set. Be carefull
 though! In order to check this out, clone it into a subdir, then
 move all files (including .git!) to your homedirectory
+
+NEW: Need to install Janus in order for all of this to work now.
+See: https://github.com/carlhuda/janus
