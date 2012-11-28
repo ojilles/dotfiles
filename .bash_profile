@@ -100,3 +100,5 @@ test -n "$INTERACTIVE" -a -n "$LOGIN" && {
     uptime
 }
 
+set -o vi
+
