@@ -5,6 +5,8 @@ export SVN_EDITOR="/usr/bin/vim"
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
+export PATH=~/bin:$PATH
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
