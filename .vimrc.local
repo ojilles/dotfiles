@@ -9,3 +9,5 @@ set noswapfile
 " Prefer unix over windows over os9 formats
 set fileformats=unix,dos,mac
 
+" Enable mouse
+set mouse=a
