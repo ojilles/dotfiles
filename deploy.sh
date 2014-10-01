@@ -19,4 +19,7 @@ cp ~/dotfiles/vimrc ~/.vimrc
 # Setting up Screenrc
 cp ~/dotfiles/screenrc ~/.screenrc
 
+# Bash profile
+cp ~/dotfiles/bash_profile ~/.bash_profile
+
 cd $OLDDIR
