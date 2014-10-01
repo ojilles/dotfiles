@@ -23,3 +23,13 @@ cp ~/dotfiles/screenrc ~/.screenrc
 cp ~/dotfiles/bash_profile ~/.bash_profile
 
 cd $OLDDIR
+
+#### Some go stuff I use
+command -v $GOPATH/bin/go-bindata >/dev/null 2>&1 || {
+	echo "Installing go-bindata as it's a dependency"
+	go get github.com/jteeuwen/go-bindata/...
+}
+command -v $GOPATH/bin/goxc >/dev/null 2>&1 || {
+	echo "Installing goxc as it's a dependency"
+	go get github.com/laher/goxc
+}
