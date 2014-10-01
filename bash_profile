@@ -51,4 +51,4 @@ set completion-ignore-case on
   fi
 
 export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:~/dotfiles/bin
