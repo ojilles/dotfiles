@@ -7,6 +7,10 @@ filetype plugin indent on
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 
+" Setup javascript indenting
+cd ~/.vim/bundle
+  git clone https://github.com/pangloss/vim-javascript.git
+
 " Turn off annoying swapfiles
 set noswapfile
 
@@ -16,6 +20,7 @@ set fileformats=unix,dos,mac
 " Enable mouse
 set mouse=a
 
+" http://blog.gopheracademy.com/vimgo-development-environment
 " From: https://github.com/fatih/vim-go
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
