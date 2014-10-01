@@ -4,8 +4,8 @@ vbell off
 defscrollback 5000
 hardstatus alwayslastline
 hardstatus string '%{= kG}%-Lw%{= kW}%50> %n*%f %t%{= kG}%+Lw%< %{= kG}%-=%D %m/%d/%y | %C:%s %A | %1`%{-}'
-shell /bin/bash 
 escape ^Ff
+shell -$SHELL
 
 screen -t editor 0 -/bin/bash
 screen -t running 1 -/bin/bash

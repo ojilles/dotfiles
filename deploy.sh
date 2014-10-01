@@ -14,7 +14,9 @@ git clone https://github.com/fatih/vim-go.git
 
 # Setting up vim
 mkdir -p ~/.vim/sessions
-cp ~/dotfiles/.vimrc ~/.vimrc
+cp ~/dotfiles/vimrc ~/.vimrc
 
 # Setting up Screenrc
-cp ~/dotfiles/.screenrc ~/.screenrc
+cp ~/dotfiles/screenrc ~/.screenrc
+
+cd $OLDDIR
