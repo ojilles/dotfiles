@@ -7,10 +7,6 @@ filetype plugin indent on
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 
-" Setup javascript indenting
-cd ~/.vim/bundle
-  git clone https://github.com/pangloss/vim-javascript.git
-
 " Turn off annoying swapfiles
 set noswapfile
 

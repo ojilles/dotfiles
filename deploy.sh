@@ -12,6 +12,10 @@ cd ~/.vim/bundle
 rm -rf ~/.vim/bundle/vim-go
 git clone https://github.com/fatih/vim-go.git
 
+# Setup javascript indenting
+cd ~/.vim/bundle
+git clone https://github.com/pangloss/vim-javascript.git
+
 # Setting up vim
 mkdir -p ~/.vim/sessions
 cp ~/dotfiles/vimrc ~/.vimrc
@@ -24,6 +28,7 @@ cp ~/dotfiles/bash_profile ~/.bash_profile
 
 cd $OLDDIR
 
+echo "Installing go tools"
 #### Some go stuff I use
 command -v $GOPATH/bin/go-bindata >/dev/null 2>&1 || {
 	echo "Installing go-bindata as it's a dependency"
