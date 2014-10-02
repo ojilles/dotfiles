@@ -17,12 +17,11 @@ echo "This script will make your Mac awesome"
 ###############################################################################
 
 echo ""
-echo "Hide the Time Machine, Volume, User, and Bluetooth icons"
+echo "Hide the Time Machine, Volume, and Bluetooth icons"
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
   defaults write "${domain}" dontAutoLoad -array \
     "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-    "/System/Library/CoreServices/Menu Extras/User.menu"
+    "/System/Library/CoreServices/Menu Extras/Volume.menu"
 done
 defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
@@ -31,17 +30,6 @@ defaults write com.apple.systemuiserver menuExtras -array \
   "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
 sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
-
-echo ""
-echo "Disabling OS X Gate Keeper"
-echo "(You'll be able to install any app you want from here on, not just Mac App Store apps)"
-sudo spctl --master-disable
-sudo defaults write /var/db/SystemPolicy-prefs.plist enabled -string no
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-echo ""
-echo "Increasing the window resize speed for Cocoa applications"
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 echo ""
 echo "Expanding the save panel by default"
@@ -93,10 +81,6 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 ###############################################################################
 
 echo ""
-echo "Increasing sound quality for Bluetooth headphones/headsets"
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
-
-echo ""
 echo "Enabling full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
@@ -108,9 +92,9 @@ echo ""
 echo "Setting a blazingly fast keyboard repeat rate (ain't nobody got time fo special chars while coding!)"
 defaults write NSGlobalDomain KeyRepeat -int 0
 
-echo ""
-echo "Disabling auto-correct"
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+#echo ""
+#echo "Disabling auto-correct"
+#defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 echo ""
 echo "Setting trackpad & mouse speed to a reasonable number"
@@ -194,7 +178,7 @@ echo "Enabling snap-to-grid for icons on the desktop and in other icon views"
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you donâ€™t use
 # the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
+defaults write com.apple.dock persistent-apps -array
 
 echo ""
 echo "Setting the icon size of Dock items to 36 pixels for optimal size/screen-realestate"
@@ -254,25 +238,15 @@ echo ""
 echo "Adding a context menu item for showing the Web Inspector in web views"
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-
-###############################################################################
-# Mail
-###############################################################################
-
-echo ""
-echo "Setting email addresses to copy as 'foo@example.com' instead of 'Foo Bar <foo@example.com>' in Mail.app"
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
-
 ###############################################################################
 # Terminal
 ###############################################################################
 
-echo ""
-echo "Enabling UTF-8 ONLY in Terminal.app and setting the Pro theme by default"
-defaults write com.apple.terminal StringEncodings -array 4
-defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
-defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
+# echo ""
+# echo "Enabling UTF-8 ONLY in Terminal.app and setting the Pro theme by default"
+# defaults write com.apple.terminal StringEncodings -array 4
+# defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
+# defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
 
 
 ###############################################################################
@@ -283,9 +257,9 @@ echo ""
 echo "Preventing Time Machine from prompting to use new hard drives as backup volume"
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-echo ""
-echo "Disabling local Time Machine backups"
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# echo ""
+# echo "Disabling local Time Machine backups"
+# hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 
 ###############################################################################
@@ -300,29 +274,29 @@ echo ""
 echo "Disable smart quotes as itâ€™s annoying for messages that contain code"
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
-echo ""
-echo "Disable continuous spell checking"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+# echo ""
+# echo "Disable continuous spell checking"
+# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ###############################################################################
 # Personal Additions
 ###############################################################################
 
-echo ""
-echo "Disable hibernation (speeds up entering sleep mode)"
-sudo pmset -a hibernatemode 0
+# echo ""
+# echo "Disable hibernation (speeds up entering sleep mode)"
+# sudo pmset -a hibernatemode 0
+ 
+# echo ""
+# echo "Remove the sleep image file to save disk space"
+# sudo rm /Private/var/vm/sleepimage
+# echo "Creating a zero-byte file insteadâ€¦"
+# sudo touch /Private/var/vm/sleepimage
+# echo "â€¦and make sure it canâ€™t be rewritten"
+# sudo chflags uchg /Private/var/vm/sleepimage
 
-echo ""
-echo "Remove the sleep image file to save disk space"
-sudo rm /Private/var/vm/sleepimage
-echo "Creating a zero-byte file insteadâ€¦"
-sudo touch /Private/var/vm/sleepimage
-echo "â€¦and make sure it canâ€™t be rewritten"
-sudo chflags uchg /Private/var/vm/sleepimage
-
-echo ""
-echo "Disable the sudden motion sensor as itâ€™s not useful for SSDs"
-sudo pmset -a sms 0
+# echo ""
+# echo "Disable the sudden motion sensor as itâ€™s not useful for SSDs"
+# sudo pmset -a sms 0
 
 echo ""
 echo "Speeding up wake from sleep to 24 hours from an hour"

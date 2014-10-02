@@ -1,6 +1,52 @@
 #! /bin/bash
 OLDDIR=`pwd`
 
+# Check for Homebrew,
+# Install if we don't have it
+if test ! $(which brew); then
+	echo "Installing homebrew..."
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+# Update homebrew recipes
+echo "Updating brew recipes"
+# brew update
+
+echo "Installing a few brew apps"
+# install a bunch of brew stuff
+# see f.ex. http://lapwinglabs.com/blog/hacker-guide-to-setting-up-your-mac
+brew install tree
+brew install go
+brew install wget
+# brew install hub # easy github integration on command line, see 'brew home hub'
+brew cleanup
+
+# # Cask
+# echo "Installing Brew Cask"
+# brew tap phinze/homebrew-cask
+# #cd /usr/local/Library/Taps/phinze/homebrew-cask
+# #git remote set-url origin git@github.com:phinze/homebrew-cask.git
+# brew install brew-cask
+# brew cask update
+# 
+# # Apps
+# echo 'Installing applications through Brew Cask (chrome etc)'
+# apps=(
+# 	dropbox
+# 	google-chrome
+# 	qlmarkdown
+# 	vagrant
+# 	arq
+# 	iterm2
+# 	flux
+# 	skype
+# )
+# 
+# # Install apps to /Applications
+# # Default is: /Users/$user/Applications
+# echo "installing apps..."
+# brew cask install --appdir="/Applications" ${apps[@]}
+# exit
+
 # Install Pathogen for vim
 echo "Installing Pathogen for vim..."
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
@@ -38,3 +84,5 @@ command -v $GOPATH/bin/goxc >/dev/null 2>&1 || {
 	echo "Installing goxc as it's a dependency"
 	go get github.com/laher/goxc
 }
+
+~/dotfiles/osx-for-hackers.sh
