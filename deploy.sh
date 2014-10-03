@@ -50,6 +50,7 @@ brew cask install --appdir="/Applications" ${apps[@]}
 # Put screensaver on bottom right corner 
 # http://secrets.blacktree.com/edit?id=2356
 defaults write com.apple.dock wvous-br-corner -integer 5
+defaults write com.apple.dock wvous-tr-corner -integer 4
 killall Dock
 # wait 5 secs before asking for password
 defaults write com.apple.screensaver askForPasswordDelay -integer 5

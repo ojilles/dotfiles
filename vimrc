@@ -13,9 +13,6 @@ set noswapfile
 " Prefer unix over windows over os9 formats
 set fileformats=unix,dos,mac
 
-" Enable mouse
-set mouse=a
-
 " http://blog.gopheracademy.com/vimgo-development-environment
 " From: https://github.com/fatih/vim-go
 au FileType go nmap <leader>r <Plug>(go-run)
