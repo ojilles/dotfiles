@@ -20,32 +20,32 @@ brew install wget
 # brew install hub # easy github integration on command line, see 'brew home hub'
 brew cleanup
 
-# # Cask
-# echo "Installing Brew Cask"
-# brew tap phinze/homebrew-cask
-# #cd /usr/local/Library/Taps/phinze/homebrew-cask
-# #git remote set-url origin git@github.com:phinze/homebrew-cask.git
-# brew install brew-cask
-# brew cask update
-# 
-# # Apps
-# echo 'Installing applications through Brew Cask (chrome etc)'
-# apps=(
-# 	dropbox
-# 	google-chrome
-# 	qlmarkdown
-# 	vagrant
-# 	arq
-# 	iterm2
-# 	flux
-# 	skype
-# )
-# 
-# # Install apps to /Applications
-# # Default is: /Users/$user/Applications
-# echo "installing apps..."
-# brew cask install --appdir="/Applications" ${apps[@]}
-# exit
+# Cask
+echo "Installing Brew Cask"
+brew tap phinze/homebrew-cask
+#cd /usr/local/Library/Taps/phinze/homebrew-cask
+#git remote set-url origin git@github.com:phinze/homebrew-cask.git
+brew install brew-cask
+brew cask update
+
+# Apps
+echo 'Installing applications through Brew Cask (chrome etc)'
+apps=(
+	dropbox
+	google-chrome
+	qlmarkdown
+	vagrant
+	arq
+	iterm2
+	flux
+	skype
+	istat-menus
+)
+
+# Install apps to /Applications
+# Default is: /Users/$user/Applications
+echo "installing apps..."
+brew cask install --appdir="/Applications" ${apps[@]}
 
 # Put screensaver on bottom right corner 
 # http://secrets.blacktree.com/edit?id=2356
