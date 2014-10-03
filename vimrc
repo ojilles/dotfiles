@@ -1,7 +1,7 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
+set ts=2
 " Next bit is from: https://github.com/mnazim/dotfiles/blob/master/vim/vimrc
 " Move Backup Files to ~/.vim/sessions
 set backupdir=~/.vim/sessions
