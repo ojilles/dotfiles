@@ -2,6 +2,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 set ruler
+set ts=2
 
 " Search stuff
 " Ignore case when searching
@@ -24,7 +25,6 @@ autocmd BufReadPost *
    \ endif
 " Remember info about open buffers on close
 set viminfo^=%
-
 
 " Next bit is from: https://github.com/mnazim/dotfiles/blob/master/vim/vimrc
 " Move Backup Files to ~/.vim/sessions
