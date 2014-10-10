@@ -23,3 +23,8 @@ au FileType go nmap gd <Plug>(go-def)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 
 map <leader>ss :setlocal spell!<cr>
+
+" https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
+" :W sudo saves the file 
+" " (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
