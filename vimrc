@@ -21,3 +21,5 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 au FileType go nmap gd <Plug>(go-def)
 au FileType go nmap <Leader>s <Plug>(go-implements)
+
+map <leader>ss :setlocal spell!<cr>
