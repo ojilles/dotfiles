@@ -1,6 +1,30 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+set ruler
+
+" Search stuff
+" Ignore case when searching
+set ignorecase
+" When searching try to be smart about cases
+set smartcase
+" Highlight search results
+set hlsearch
+" Makes search act like search in modern browsers
+set incsearch
+
+" Setup highlight of trailing whitespace
+highlight ExtraWhitespace ctermbg=blue
+map <leader>w :match ExtraWhitespace /\s\+$/<cr>
+
+" Retur to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+   \ if line("'\"") > 0 && line("'\"") <= line("$") |
+   \   exe "normal! g`\"" |
+   \ endif
+" Remember info about open buffers on close
+set viminfo^=%
+
 
 " Next bit is from: https://github.com/mnazim/dotfiles/blob/master/vim/vimrc
 " Move Backup Files to ~/.vim/sessions
@@ -25,6 +49,6 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 map <leader>ss :setlocal spell!<cr>
 
 " https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
-" :W sudo saves the file 
+" :W sudo saves the file
 " " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
