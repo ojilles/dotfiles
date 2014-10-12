@@ -16,6 +16,7 @@ echo "Installing a few brew apps"
 # see f.ex. http://lapwinglabs.com/blog/hacker-guide-to-setting-up-your-mac
 brew install tree
 brew install go
+brew install getmail
 brew install wget
 # brew install hub # easy github integration on command line, see 'brew home hub'
 brew cleanup
