@@ -18,6 +18,7 @@ brew install tree
 brew install go
 brew install getmail
 brew install wget
+brew install onepass
 # brew install hub # easy github integration on command line, see 'brew home hub'
 brew cleanup
 
