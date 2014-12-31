@@ -16,10 +16,10 @@ port=2003
 
 echo "Curling info from mytaglist.com..."
 curl -sS -X POST -H "Content-Type: application/json" -c /tmp/cookie-jar.txt  -d '{"email":"ojilles@gmail.com", "password":"aaaaaa"}' https://www.mytaglist.com/ethAccount.asmx/SignIn > /dev/null > /dev/null
-curl -sS -H "Content-Type: application/json" -b /tmp/cookie-jar.txt  -d '{}' https://www.mytaglist.com/ethClient.asmx/GetTagList2 | tail -n 1 | jq . > /tmp/result.txt
+curl -sS -H "Content-Type: application/json" -b /tmp/cookie-jar.txt  -d '{}' https://www.mytaglist.com/ethClient.asmx/GetTagList2 | tail -n 1 | /usr/local/bin/jq . > /tmp/result.txt
 
 IFS=,
-RESULT=`cat /tmp/result.txt | jq --raw-output '.d[] | [.managerName, .name, .temperature, .lastComm, .alive, .signaldBm, .batteryVolt, .OutOfRange, .batteryRemaining] | @csv'`
+RESULT=`cat /tmp/result.txt | /usr/local/bin/jq --raw-output '.d[] | [.managerName, .name, .temperature, .lastComm, .alive, .signaldBm, .batteryVolt, .OutOfRange, .batteryRemaining] | @csv'`
 #                                                 0             1      2             3          4       5           6             7            8
 
 echo "Found the following tags + data"
