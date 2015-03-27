@@ -42,6 +42,7 @@ apps=(
 	flux
 	skype
 	istat-menus
+	virtualbox
 )
 
 # Install apps to /Applications
